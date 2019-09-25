@@ -25,8 +25,8 @@
   "scripts": {
     "build": "rm -Rf ./dist && microbundle --sourcemap false",
     "size": "yarn build && size-limit",
-    "test": "yarn lint && flow check && yarn size",
-    "lint": "eslint src flow",
+    "test": "yarn lint && yarn size",
+    "lint": "eslint src && flow check",
     "copy-types": "cpy 'src/*.js.flow' dist && cpy 'dist/index.js.flow' dist --rename=use-progress-bar.js && cpy 'dist/index.js.flow' dist --rename=dist/use-progress-bar.mjs"
   },
   "peerDependencies": {
