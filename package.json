@@ -6,6 +6,9 @@
   "main": "dist/use-progress-bar.js",
   "module": "dist/use-progress-bar.mjs",
   "unpkg": "dist/use-progress-bar.umd.js",
+  "files": [
+    "dist"
+  ],
   "author": "Maxim Gerasimov <treizeger@gmail.com> (http://github.com/trzmaxim)",
   "license": "MIT",
   "repository": {
