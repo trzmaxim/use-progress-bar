@@ -1,0 +1,75 @@
+{
+  "name": "use-progress-bar",
+  "version": "0.0.1",
+  "description": "Hook to use progress bar in React",
+  "source": "src/index.js",
+  "main": "dist/use-progress-bar.js",
+  "module": "dist/use-progress-bar.mjs",
+  "unpkg": "dist/use-progress-bar.umd.js",
+  "author": "Maxim Gerasimov <treizeger@gmail.com> (http://github.com/trzmaxim)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trzmaxim/use-progress-bar.git"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "react-hooks",
+    "progress",
+    "progress-bar"
+  ],
+  "scripts": {
+    "build": "rm -Rf ./dist && microbundle --sourcemap false",
+    "size": "yarn build && size-limit",
+    "test": "yarn lint && flow check && yarn size",
+    "lint": "eslint src flow",
+    "copy-types": "cpy 'src/*.js.flow' dist && cpy 'dist/index.js.flow' dist --rename=use-progress-bar.js && cpy 'dist/index.js.flow' dist --rename=dist/use-progress-bar.mjs"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/plugin-transform-flow-strip-types": "^7.4.4",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@size-limit/preset-small-lib": "^2.1.6",
+    "babel-eslint": "^10.0.3",
+    "cpy-cli": "^2.0.0",
+    "eslint": "^6.4.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-flowtype": "^4.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "flow-bin": "^0.108.0",
+    "husky": "^3.0.5",
+    "lint-staged": "^9.3.0",
+    "microbundle": "^0.12.0-next.6",
+    "prettier": "^1.18.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/*.js*": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "size-limit": [
+    {
+      "limit": "500 B",
+      "path": "dist/use-progress-bar.js"
+    }
+  ]
+}

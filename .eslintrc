@@ -1,0 +1,19 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "standard",
+    "plugin:flowtype/recommended",
+    "prettier",
+    "prettier/flowtype",
+    "prettier/react"
+  ],
+  "parser": "babel-eslint",
+  "plugins": ["react", "flowtype", "prettier", "react-hooks"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "prettier/prettier": "error"
+  }
+}
