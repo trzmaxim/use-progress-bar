@@ -23,11 +23,11 @@
     "progress-bar"
   ],
   "scripts": {
-    "build": "rm -Rf ./dist && microbundle --sourcemap false",
+    "build": "rm -Rf ./dist && microbundle --sourcemap false && yarn copy-types",
     "size": "yarn build && size-limit",
     "test": "yarn lint && yarn size",
     "lint": "eslint src && flow check",
-    "copy-types": "cpy 'src/*.js.flow' dist && cpy 'dist/index.js.flow' dist --rename=use-progress-bar.js && cpy 'dist/index.js.flow' dist --rename=dist/use-progress-bar.mjs"
+    "copy-types": "cpy 'src/*.js.flow' dist && cpy 'dist/index.js.flow' dist --rename=use-progress-bar.js.flow && cpy 'dist/index.js.flow' dist --rename=use-progress-bar.mjs.flow"
   },
   "peerDependencies": {
     "react": "^16.8.0"
