@@ -31,7 +31,7 @@
     "flow-libs": "flow-typed install jest"
   },
   "peerDependencies": {
-    "react": "^16.8.0"
+    "react": "^16.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -58,10 +58,10 @@
     "flow-typed": "^2.6.1",
     "husky": "^3.0.5",
     "jest": "^24.9.0",
-    "lint-staged": "^9.3.0",
+    "lint-staged": "^9.4.0",
     "microbundle": "^0.12.0-next.6",
     "prettier": "^1.18.2",
-    "react": "^16.8.0"
+    "react": "^16.9.0"
   },
   "husky": {
     "hooks": {
