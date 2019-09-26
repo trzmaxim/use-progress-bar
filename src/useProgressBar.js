@@ -14,7 +14,7 @@ const DEFAULT_MAX = 80
 const DEFAULT_DURATION = 11000 // 11 sec
 
 const initialState: State = { status: IDLE, x: 0, progress: 0 }
-const reducer = (state: State, action: Action): State => {
+export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case 'increment': {
       const { increment, max } = action
