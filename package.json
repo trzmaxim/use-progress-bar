@@ -28,7 +28,8 @@
     "test": "jest && yarn lint && yarn size",
     "lint": "eslint src && flow check",
     "copy-types": "cpy 'src/*.js.flow' dist && cpy 'dist/index.js.flow' dist --rename=use-progress-bar.js.flow && cpy 'dist/index.js.flow' dist --rename=use-progress-bar.m.js.flow",
-    "flow-libs": "flow-typed install jest"
+    "flow-libs": "flow-typed install jest",
+    "release": "standard-version"
   },
   "peerDependencies": {
     "react": "^16.9.0"
@@ -39,6 +40,8 @@
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "@size-limit/preset-small-lib": "^2.1.6",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
@@ -61,11 +64,13 @@
     "lint-staged": "^9.4.0",
     "microbundle": "^0.12.0-next.6",
     "prettier": "^1.18.2",
-    "react": "^16.9.0"
+    "react": "^16.9.0",
+    "standard-version": "^7.0.0"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
