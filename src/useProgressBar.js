@@ -19,11 +19,13 @@ export const reducer = (state: State, action: Action): State => {
     case 'increment': {
       const { increment, max } = action
       const x = state.x + increment
+      const progress =
+        Math.round((1 - Math.exp((-1 * x) / 10)) * 100 * max) / 100
 
       return {
         status: PROGRESS,
         x,
-        progress: Math.round((1 - Math.exp((-1 * x) / 10)) * 100 * max) / 100,
+        progress: Math.max(progress, state.progress),
       }
     }
     case 'complete':
@@ -52,14 +54,10 @@ const useProgressBar = (
     initialState,
   )
 
-  React.useEffect(() => {
-    if (!isLoading) {
-      dispatch({ type: 'complete' })
-      return
-    }
-
-    dispatch({ type: 'reset' })
-  }, [isLoading])
+  React.useEffect(
+    () => dispatch(!isLoading ? { type: 'complete' } : { type: 'reset' }),
+    [isLoading],
+  )
 
   React.useEffect(() => {
     if (!isLoading || x > MAX_X) {
