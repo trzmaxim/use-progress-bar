@@ -4,7 +4,7 @@
   "description": "Hook to use progress bar in React",
   "source": "src/index.js",
   "main": "dist/use-progress-bar.js",
-  "module": "dist/use-progress-bar.mjs",
+  "module": "dist/use-progress-bar.m.js",
   "unpkg": "dist/use-progress-bar.umd.js",
   "files": [
     "dist"
@@ -27,7 +27,7 @@
     "size": "yarn build && size-limit",
     "test": "yarn lint && yarn size",
     "lint": "eslint src && flow check",
-    "copy-types": "cpy 'src/*.js.flow' dist && cpy 'dist/index.js.flow' dist --rename=use-progress-bar.js.flow && cpy 'dist/index.js.flow' dist --rename=use-progress-bar.mjs.flow"
+    "copy-types": "cpy 'src/*.js.flow' dist && cpy 'dist/index.js.flow' dist --rename=use-progress-bar.js.flow && cpy 'dist/index.js.flow' dist --rename=use-progress-bar.m.js.flow"
   },
   "peerDependencies": {
     "react": "^16.8.0"
