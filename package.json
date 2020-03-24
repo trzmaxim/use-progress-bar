@@ -1,6 +1,6 @@
 {
   "name": "use-progress-bar",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Hook to use progress bar in React",
   "author": "Maxim Gerasimov <treizeger@gmail.com> (http://github.com/trzmaxim)",
   "license": "MIT",
