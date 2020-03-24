@@ -1,18 +1,19 @@
 {
   "env": {
     "browser": true,
-    "es6": true,
     "jest": true
   },
   "extends": [
-    "standard",
-    "plugin:flowtype/recommended",
+    "standard-with-typescript",
     "prettier",
-    "prettier/flowtype",
+    "prettier/standard",
+    "prettier/@typescript-eslint",
     "prettier/react"
   ],
-  "parser": "babel-eslint",
-  "plugins": ["react", "flowtype", "prettier", "react-hooks"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["prettier", "react", "react-hooks"],
   "rules": {
     "react-hooks/rules-of-hooks": "error",
     "prettier/prettier": "error"

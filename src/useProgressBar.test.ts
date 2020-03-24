@@ -1,10 +1,9 @@
-// @flow
-import { reducer } from './useProgressBar'
+import { reducer, State } from './useProgressBar'
 
-const initialState = { status: 'idle', x: 0, progress: 0 }
+const initialState: State = { status: 'idle', x: 0, progress: 0 }
 test('unknown action error', () => {
   expect(() => {
-    // $FlowIgnore
+    // @ts-ignore
     reducer(initialState, { type: 'unknown' })
   }).toThrow('Unknown action')
 })

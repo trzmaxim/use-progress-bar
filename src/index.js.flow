@@ -1,7 +1,0 @@
-// @flow
-import type { ProgressBar, Options } from './types.js.flow'
-
-declare export default function useProgressBar(
-  isLoading: boolean,
-  options?: Options,
-): ProgressBar

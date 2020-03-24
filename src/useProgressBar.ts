@@ -1,7 +1,26 @@
-// @flow
-import * as React from 'react'
+import React from 'react'
 
-import type { ProgressBar, Options, State, Action } from './types.js.flow'
+export interface ProgressBar {
+  readonly status: 'idle' | 'progress' | 'completed'
+  readonly progress: number
+}
+
+export interface Options {
+  readonly frequency?: number
+  readonly max?: number
+  readonly duration?: number
+}
+
+export interface State {
+  readonly status: 'idle' | 'progress' | 'completed'
+  readonly x: number
+  readonly progress: number
+}
+
+export type Action =
+  | { type: 'increment'; increment: number; max: number }
+  | { type: 'complete' }
+  | { type: 'reset' }
 
 const IDLE = 'idle'
 const PROGRESS = 'progress'
@@ -41,7 +60,7 @@ export const reducer = (state: State, action: Action): State => {
   }
 }
 
-const useProgressBar = (
+export const useProgressBar = (
   isLoading: boolean,
   {
     frequency = DEFAULT_FREQUENCY,
@@ -49,7 +68,7 @@ const useProgressBar = (
     duration = DEFAULT_DURATION,
   }: Options = {},
 ): ProgressBar => {
-  const [{ x, progress, status }, dispatch] = React.useReducer<State, Action>(
+  const [{ x, progress, status }, dispatch] = React.useReducer(
     reducer,
     initialState,
   )
@@ -75,5 +94,3 @@ const useProgressBar = (
 
   return { status, progress }
 }
-
-export default useProgressBar
