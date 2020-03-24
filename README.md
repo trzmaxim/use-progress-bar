@@ -1,4 +1,5 @@
 # use-progress-bar
+
 Hook to use progress bar in React
 
 ## Demo
@@ -15,12 +16,11 @@ Hook to use progress bar in React
 $ yarn add use-progress-bar
 ```
 
-
 ## Usage
 
 ```js
 import React from 'react'
-import useProgressBar from 'use-progress-bar'
+import { useProgressBar } from 'use-progress-bar'
 
 const ProgressBar = ({ isLoading }) => {
   const { status, progress } = useProgressBar(isLoading)
